@@ -1,5 +1,6 @@
 package com.dxc.client;
 import java.util.List;
+
 import com.dxc.dao.EmployeeDao;
 import com.dxc.dao.EmployeeDaoImp;
 import com.dxc.model.employee;
@@ -10,10 +11,8 @@ public class ClientDemo {
 		EmployeeDao dao = new EmployeeDaoImp();
 		
 		Scanner sc=new Scanner(System.in);
-		int n=sc.nextInt();
-		
-		while( n==1) {
-			System.out.println("------options-------");
+		while(true) {
+			System.out.println("Select your options");
 			System.out.println("1.save Employee");
 			System.out.println("2. Retrive all Employee Data");
 			System.out.println("3.Update the Employee information");
@@ -34,8 +33,7 @@ public class ClientDemo {
 					int salary=sc.nextInt();
 					dao.saveemployee(name, age, salary);
 					System.out.println("Succefull saved records in Employee ");
-					
-				}
+					}
 				break;
 				
 				
@@ -74,11 +72,11 @@ public class ClientDemo {
 				System.out.println("Wrong output");
 			}
 			System.out.println("Do you want to continue");
-			n=sc.nextInt();
-				
-				
-				
-			
+			int b=sc.nextInt();
+			if(b==1)
+				continue;
+			else
+				break;
 			}
 			System.out.println("you are out of the loop");
 			
